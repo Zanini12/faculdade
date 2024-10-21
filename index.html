@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flávia Zanini</title>
+    <style>
+        /* Estilização básica da página */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 40px;
+        }
+
+        /* Estilização dos botões */
+        .btn-container {
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Estilo para as áreas de conteúdo */
+        .content {
+            margin-top: 20px;
+            padding: 20px;
+            border: 2px solid #ccc;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Ocultar inicialmente as seções de conteúdo */
+        .hidden {
+            display: none;
+        }
+
+        /* Estilo para o formulário de contato */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            width: 30%;
+            align-self: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Flávia Zanini</h1>
+
+    <!-- Container de botões -->
+    <div class="btn-container">
+        <button onclick="showContent('personalInfo')">Informações Pessoais</button>
+        <button onclick="showContent('formation')">Formação</button>
+        <button onclick="showContent('portfolio')">Portfólio</button>
+        <button onclick="showContent('contact')">Contato</button>
+    </div>
+
+    <!-- Seção de informações pessoais -->
+    <div id="personalInfo" class="content hidden">
+        <h2>Informações Pessoais</h2>
+        <p>Natural do interior paulista, residente na cidade de Bauru, 42 anos, casada.<br>
+           Atuando como bancária da Caixa Econômica Federal.<br>
+           Hobbies: gastronomia e ciclismo.
+        </p>
+    </div>
+
+    <!-- Seção de formação -->
+    <div id="formation" class="content hidden">
+        <h2>Formação</h2>
+        <p>Paulista, formada em Informática pelo Colégio Técnico Industrial da UNESP, em Educação Física pela UNESP (2005),<br>
+           com especialização em Controladoria e Finanças pela Estácio (2013).<br>
+           Atualmente cursando Engenharia de Software pela Uninter.
+        </p>
+    </div>
+
+    <!-- Seção de portfólio -->
+    <div id="portfolio" class="content hidden">
+        <h2>Portfólio</h2>
+        <p><a href="https://www.uninter.com/" target="_blank">https://www.uninter.com/</a><br>
+           <a href="https://univirtus.uninter.com/ava/web/" target="_blank">https://univirtus.uninter.com/ava/web/</a><br>
+           <a href="https://www.uninter.com/biblioteca/" target="_blank">https://www.uninter.com/biblioteca/</a>
+        </p>
+    </div>
+
+    <!-- Seção de contato -->
+    <div id="contact" class="content hidden">
+        <h2>Contato</h2>
+        <form>
+            <input type="text" name="nome" placeholder="Digite seu nome" required>
+            <input type="email" name="email" placeholder="Digite seu Email" required>
+            <textarea name="mensagem" rows="4" maxlength="200" placeholder="Digite sua mensagem (máximo 200 caracteres)" required></textarea>
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+    <script>
+        // Função para exibir a seção de conteúdo correspondente ao botão clicado
+        function showContent(section) {
+            // Oculta todas as seções
+            document.querySelectorAll('.content').forEach(div => {
+                div.classList.add('hidden');
+            });
+
+            // Exibe a seção selecionada
+            document.getElementById(section).classList.remove('hidden');
+        }
+    </script>
+
+</body>
+</html>
